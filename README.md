@@ -18,16 +18,24 @@ The main difference is in how the branch history is presented.
 - Consider rebasing for cleaner history (but not on shared branches)
 
 ## Difference between `git fetch` vs. `git pull`?
-`git fetch` downloads updates from a remote repository to your local repository without integrating them into your working files, allowing you to see what others have committed before merging.  
-`git pull` is a combination of `git fetch` followed by `git merge` which automatically merges changes into your active working directory, keeping your branch in-sync with the remote branch.
+`git fetch` downloads updates from a remote repository to your local repository without
+integrating them into your working files, allowing you to see what others have committed before merging.  
+`git pull` is a combination of `git fetch` followed by `git merge` which automatically merges
+changes into your active working directory, keeping your branch in-sync with the remote branch.
 
 ## Difference between git log and git reflog?
-`git log` - Shows the commit history of a repository (commits that are part of the current branch's timeline and are reachable from the branch head). It's the primary tool for tracking the formal project history.
+`git log` - Shows the commit history of a repository (commits that are part of the current branch's timeline and
+ are reachable from the branch head). It's the primary tool for tracking the formal project history.
 
-`git reflog` - Tracks all changes to references (like HEAD) in the local repository including changes that aren't reflected in the commit history (e.g., checkout, reset or rebase). It records any movement of HEAD or branch pointers, whether the change is part of the formal commit history or not.
+`git reflog` - Tracks all changes to references (like HEAD) in the local repository including changes that
+ aren't reflected in the commit history (e.g., checkout, reset or rebase). It records any movement of HEAD or
+ branch pointers, whether the change is part of the formal commit history or not.
 
 ## How do you revert a commit that has already been pushed and made public?
-To undo the modifications introduced by a previous commit while ensuring safety for public commits, employ `git revert <commit_hash>`, which generates a fresh commit that reverses the earlier changes. On the other hand, `git reset` (Don't use git reset on public branches) allows reverting to an earlier state; this changes history and can break things for others who've already pulled the original commits. Only use reset on private/local branches.
+To undo the modifications introduced by a previous commit while ensuring safety for public commits,
+employ `git revert <commit_hash>`, which generates a fresh commit that reverses the earlier changes.
+On the other hand, `git reset` (Don't use git reset on public branches) allows reverting to an earlier state;
+this changes history and can break things for others who've already pulled the original commits. Only use reset on private/local branches.
 
 ### How to Revert a Commit
 1. Identify the commit to revert  
@@ -57,16 +65,20 @@ To undo the modifications introduced by a previous commit while ensuring safety 
    3. e4f5g6h - Previous working commit
 
 ## What Is Git?
-Git is a widely adopted distributed version control system (VCS) designed to track modifications in source code throughout the software development process and to coordinate work among multiple developers.
+Git is a widely adopted distributed version control system (VCS) designed to track modifications in source code throughout
+the software development process and to coordinate work among multiple developers.
 
 ### Why Is Git Used?
 - **Version Control**: Tracks changes to files over time, allowing you to recall specific versions later.
-- **Backup and Restore**: Changes in Git are committed to the local repository, creating a complete project history. This history provides a backup of every change, and it's possible to revert to any previous project state.
+- **Backup and Restore**: Changes in Git are committed to the local repository, creating a complete project history.
+    This history provides a backup of every change, and it's possible to revert to any previous project state.
 - **Collaboration**: Multiple developers can work on the same project simultaneously.
 - **Distributed**: Everyone has a full copy of the project history on their machine.
 - **Branching and Experimentation**: Enables parallel development workflows with easy branch creation and merging.
-- **Track Changes**: Git allows users to see precisely what changes have been made, by whom, and when. This is valuable for understanding a project's evolution and auditing changes.
-- **Continuous Integration and Delivery (CI/CD)**: Git integrates seamlessly with numerous Continuous Integration/Continuous Deployment (CI/CD) solutions, streamlining software testing and deployment. This enhances the efficiency of the development workflow and minimizes the likelihood of mistakes.
+- **Track Changes**: Git allows users to see precisely what changes have been made, by whom, and when.
+    This is valuable for understanding a project's evolution and auditing changes.
+- **Continuous Integration and Delivery (CI/CD)**: Git integrates seamlessly with numerous Continuous Integration/Continuous Deployment (CI/CD) solutions,
+    streamlining software testing and deployment. This enhances the efficiency of the development workflow and minimizes the likelihood of mistakes.
 
 ## What's the difference between Git and GitHub?
 
@@ -81,7 +93,8 @@ Git is a widely adopted distributed version control system (VCS) designed to tra
 | **Pricing**    | Free and open-source        | Free tier + paid plans      |
 
 ## What is branching in Git?
-A branch in Git is like a parallel version of your project. It lets you make changes, try new features, or fix bugs without affecting the main project (usually called the main or master branch).
+A branch in Git is like a parallel version of your project. It lets you make changes, try new features,
+or fix bugs without affecting the main project (usually called the main or master branch).
 
 ```bash
 git branch branch-name       # Creates branch
@@ -132,7 +145,8 @@ git checkout branch-name
 ```
 
 ## What is a merge in Git?
-Merging is a Git operation that integrates changes from one branch into another. It combines two branches by creating a new merge commit preserving the history of both branches.
+Merging is a Git operation that integrates changes from one branch into another. It combines two branches by creating a new merge commit 
+preserving the history of both branches.
 
 Use merge when:
 - Working on shared branches
@@ -190,7 +204,9 @@ Use merge when:
    ```
 
 ## What is a conflict in Git?
-A conflict in Git occurs when Git cannot automatically resolve changes from different branches. A conflict in Git occurs when two branches have made edits to the same line in a file or when one branch deletes a file while the other branch modifies it. Git cannot automatically resolve these changes; the developer must manually resolve the conflicts.
+A conflict in Git occurs when Git cannot automatically resolve changes from different branches. A conflict in Git occurs when two branches 
+have made edits to the same line in a file or when one branch deletes a file while the other branch modifies it. 
+Git cannot automatically resolve these changes; the developer must manually resolve the conflicts.
 
 1. Git will mark conflicted files
 2. Open files and look for conflict markers:
@@ -216,7 +232,8 @@ A conflict in Git occurs when Git cannot automatically resolve changes from diff
 5. Consider rebasing for cleaner history (but not on shared branches)
 
 ## How do you resolve a merge conflict?
-To resolve a merge conflict, edit the files to fix the conflicting changes. Then, use `git add` to stage the resolved files and `git commit` to commit the resolved merge.
+To resolve a merge conflict, edit the files to fix the conflicting changes. Then, use `git add` to stage the resolved files 
+and `git commit` to commit the resolved merge.
 
 ## What's the difference between git merge & git rebase? Which method do you prefer?
 The main difference is in how the branch history is presented.  
@@ -224,19 +241,23 @@ The main difference is in how the branch history is presented.
 `git rebase` moves or rewrites your changes on the top of another branch, resulting in a linear commit history.
 
 ## What is `git fetch` vs. `git pull`?
-`git fetch` downloads updates from a remote repository to your local repository without integrating them into your working files, allowing you to see what others have committed before merging.  
-`git pull` is a combination of `git fetch` followed by `git merge` which automatically merges changes into your active working directory, keeping your branch in-sync with the remote branch.
+`git fetch` downloads updates from a remote repository to your local repository without integrating them into your working files, 
+allowing you to see what others have committed before merging.  
+`git pull` is a combination of `git fetch` followed by `git merge` which automatically merges changes into your active working directory, 
+keeping your branch in-sync with the remote branch.
 
 ## What is `git stash`?
 The `git stash` command temporarily stores your working directory's modifications, allowing you to switch between branches without discarding your current progress.
 
 ## What command do you use to return to a previous commit?
-To return to a previous commit on a private, local repository, you'll first want to run `git log` to pull up the branch's history. Then, after identifying the version's hash you want to go to, use the `git reset` command to change the repository to the commit.
+To return to a previous commit on a private, local repository, you'll first want to run `git log` to pull up the branch's history. 
+Then, after identifying the version's hash you want to go to, use the `git reset` command to change the repository to the commit.
 
 For a public, remote repository, the `git revert` command is a safer option. It'll create a new commit with the previous edits rather than delete commits from the history.
 
 ## What is `git merge --squash`?
-The `git merge --squash` command is a merge strategy that combines all commits from a feature branch into a single new commit when merging into the target branch, resulting in a tidier project history.
+The `git merge --squash` command is a merge strategy that combines all commits from a feature branch into a single new commit 
+when merging into the target branch, resulting in a tidier project history.
 
 ### When to Use Squash Merge
 - When a feature branch has many small, incremental commits you want to consolidate
@@ -280,10 +301,12 @@ Where G is a new single commit containing all changes from D, E, and F.
 Use `git commit --amend` to modify the most recent commit. This can change the commit's message or include new changes.
 
 ## How do you delete a branch locally and remotely?
-Use `git branch -d <branch_name>` to delete a local branch. If the branch is not fully merged, you may need to use `-D` instead. To delete a remote branch, use `git push <remote_name> --delete <branch_name>`.
+Use `git branch -d <branch_name>` to delete a local branch. If the branch is not fully merged, you may need to use `-D` instead. 
+To delete a remote branch, use `git push <remote_name> --delete <branch_name>`.
 
 ## What is `git checkout`?
-`git checkout` allows navigating between different branches or reverting working tree files to a previous state. However, in the latest versions of Git, it is advised to use `git switch` for changing branches and `git restore` to revert files, each designated for these specific functions.
+`git checkout` allows navigating between different branches or reverting working tree files to a previous state. However, 
+in the latest versions of Git, it is advised to use `git switch` for changing branches and `git restore` to revert files, each designated for these specific functions.
 
 ## How do you remove a file from Git but not delete it from your file system?
 Use `git rm --cached <file_name>` to remove a file from Git without deleting it from your filesystem.
@@ -305,10 +328,12 @@ HEAD is a reference to the last commit in the currently checked-out branch.
 `git stash apply` - Applies stashed changes but keeps them in the stash list for later use.
 
 ## What is a fast-forward merge in Git?
-A fast-forward merge happens when the target branch's tip is behind the merged branch's tip, allowing the target branch to "catch up" by just moving forward to the merged branch's tip.
+A fast-forward merge happens when the target branch's tip is behind the merged branch's tip, allowing the target branch 
+to "catch up" by just moving forward to the merged branch's tip.
 
 ## Explain the Git branching strategy you use.
-A common strategy is the Git Flow, which involves having a master branch, develop branch, feature branches, release branches, and hotfix branches, each serving a different purpose in the development cycle.
+A common strategy is the Git Flow, which involves having a master branch, develop branch, feature branches, release branches, 
+and hotfix branches, each serving a different purpose in the development cycle.
 
 ## How do you revert a Git repository to a previous commit?
 Use `git reset --hard <commit-hash>` to revert to a specific commit, discarding all changes since that commit.
@@ -317,7 +342,8 @@ Use `git reset --hard <commit-hash>` to revert to a specific commit, discarding 
 A detached HEAD occurs when you check out a commit, branch, or tag that is not the latest commit of a branch.
 
 ## How do you fix a detached HEAD?
-Create a new branch from the detached HEAD state with `git branch <new-branch>` and check it out with `git checkout <new-branch>` to move back to a non-detached state.
+Create a new branch from the detached HEAD state with `git branch <new-branch>` and check it out with `git checkout <new-branch>` 
+to move back to a non-detached state.
 
 ## How do you combine multiple commits into one without merging?
 ### Interactive Rebase to Squash Commits
@@ -387,16 +413,19 @@ Create a new branch from the detached HEAD state with `git branch <new-branch>` 
    ```
 
 ## Explain the difference between `git pull` and `git fetch` followed by `git merge`.
-`git pull` is a combination of `git fetch` followed by `git merge` which automatically merges changes into your active working directory, keeping your branch in-sync with the remote branch.
+`git pull` is a combination of `git fetch` followed by `git merge` which automatically merges changes into your active working directory, 
+keeping your branch in-sync with the remote branch.
 
-`git fetch` downloads updates from a remote repository to your local repository without integrating them into your working files, allowing you to see what others have committed before merging.
+`git fetch` downloads updates from a remote repository to your local repository without integrating them into your working files, 
+allowing you to see what others have committed before merging.
 
 `git merge` preserves the history of both branches by creating a new merge commit. It allows you to review changes before merging.
 
 `git rebase` moves or rewrites your changes on the top of another branch, resulting in a linear commit history.
 
 ## What is the significance of `git push --force`?
-`git push --force` is used to overwrite the remote history with your local history. It should be used with caution as it can overwrite changes in the remote repository.
+`git push --force` is used to overwrite the remote history with your local history. It should be used with caution as 
+it can overwrite changes in the remote repository.
 
 # Git Concepts and Workflow Guide
 
@@ -432,7 +461,8 @@ You can mention these three commands:
 - `git rebase -i --autosquash` is a rebase type of squash for merging multiple commits.
 
 ### Have you ever encountered a merge conflict? How did you go about resolving it?
-Merge conflicts happen when there are competing changes within the commits, and Git is unable to automatically determine which changes to use. Merge conflicts can be resolved by editing the file that has the conflict. And once the edits get made, add and commit the file.
+Merge conflicts happen when there are competing changes within the commits, and Git is unable to automatically determine 
+which changes to use. Merge conflicts can be resolved by editing the file that has the conflict. And once the edits get made, add and commit the file.
 
 ---
 
